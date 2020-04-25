@@ -1,2 +1,2 @@
 # TheGameLauncherApp
-This app will give the user the option of playing three nostalgic games 
+This app will give the user the option of playing two nostalgic games 
