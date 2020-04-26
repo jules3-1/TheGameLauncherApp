@@ -59,7 +59,49 @@ def text_objects(text, font,color):
     textSurface = font.render(text,True,color)
     return textSurface, textSurface.get_rect()
 
+def howto():
 
+    howtogo=True
+
+    while howtogo:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            elif event.type==pygame.KEYUP:
+                if event.key==pygame.K_x:
+                     howtogo=False
+
+        BigText = pygame.font.SysFont("comicsansms",60)
+        Text = pygame.font.SysFont("comicsansms",20)
+        textSurf1, textRect1 = text_objects("How To Play:",BigText,BLACK)
+        textRect1.center = ((display_width/2),(display_height*0.2))        
+        textSurf2, textRect2 = text_objects("1.Press X to Go Back or Quit the Game",Text,BLACK)
+        textRect2 = (20,(display_height*0.3))
+        textSurf3, textRect3 = text_objects("2.Press G to Go",Text,BLACK)
+        textRect3= (20,(display_height*0.4))
+        textSurf4, textRect4 = text_objects("3. Use the Arrow Keys to navigate the Right Paddle",Text,BLACK)
+        textRect4= (20,(display_height*0.5))
+        textSurf5, textRect5 = text_objects("4.Use the W,S Keys to navigate the Left Paddle",Text,BLACK)
+        textRect5= (20,(display_height*0.6))
+        textSurf6, textRect6 = text_objects("5.Press P to Pause and to Continue after a pause",Text,BLACK)
+        textRect6= (20,(display_height*0.7))
+        textSurf7, textRect7 = text_objects("6.The ball should get into the opposition goal to get 1 point",Text,BLACK)
+        textRect7= (20,(display_height*0.8))
+        textSurf8, textRect8 = text_objects("7.The First to score 3 points wins",Text,BLACK)
+        textRect8= (20,(display_height*0.9))
+        screen.blit(background,[0,0])
+        screen.blit(textSurf1, textRect1)
+        screen.blit(textSurf2, textRect2)
+        screen.blit(textSurf3, textRect3)
+        screen.blit(textSurf4, textRect4)
+        screen.blit(textSurf5, textRect5)
+        screen.blit(textSurf6, textRect6)
+        screen.blit(textSurf7, textRect7)
+        screen.blit(textSurf8, textRect8)
+        pygame.display.update()
+
+    
 def button(msg,x,y,w,h,ic,ac,action=None):
     mouse = pygame.mouse.get_pos()
     click = pygame.mouse.get_pressed()
@@ -107,6 +149,8 @@ def gameintro():
         
         button("Quit!",450,350,100,50,red,bright_red,quitgame)
 
+        button("How To Play?",display_width*0.4,display_height*0.8,150,50,red,bright_red,howto)
+
         pygame.display.update()
 
 
@@ -122,7 +166,6 @@ def paused():
     
     while pause:
         for event in pygame.event.get():
-            #print(event)
             if event.type == pygame.QUIT:
                 pygame.quit()
                 quit()
