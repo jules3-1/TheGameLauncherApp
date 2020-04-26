@@ -193,8 +193,8 @@ def gamestart():
 
     len_snake=1
 
-    foodx = (round(random.randrange(disp_width/10, disp_width*0.9) / 10.0) * 10.0)
-    foody = (round(random.randrange(disp_height/10, disp_height*0.9) / 10.0) * 10.0)
+    foodx = (round(random.randrange((disp_width/10)+10.0, (disp_width*0.9)-10.0) / 10.0) * 10.0)
+    foody = (round(random.randrange((disp_height/10)+10.0, (disp_height*0.9)-10.0) / 10.0) * 10.0)
 
     while carryOn:
 
@@ -276,8 +276,8 @@ def gamestart():
         pygame.display.update()
 
         if x1 == foodx and y1 == foody:
-            foodx = (round(random.randrange(disp_width/10, disp_width*0.9) / 10.0) * 10.0)
-            foody = (round(random.randrange(disp_height/10, disp_height*0.9) / 10.0) * 10.0)
+            foodx = (round(random.randrange((disp_width/10)+10.0, (disp_width*0.9)-10.0) / 10.0) * 10.0)
+            foody = (round(random.randrange((disp_height/10)+10.0, (disp_height*0.9)-10.0) / 10.0) * 10.0)
             len_snake += 1
             
         clock.tick(20)
