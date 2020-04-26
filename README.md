@@ -8,3 +8,5 @@ These games are made using pygame library in Python 3.7.7.
 So rush now and relive your childhood memories!
 HAVE FUN PLAYING :)
 There might be Future ideas which could be added to this launcher that could make this exciting games even more exciting. Or maybe you could see an addition of few more gamesd into it. 
+
+PLEASE TAKE A LOOK AT THE README FILES OF EACH GAME IN THEIR RESPECTIVE SUBFOLDER.
