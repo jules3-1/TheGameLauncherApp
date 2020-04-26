@@ -38,6 +38,44 @@ def text_objects(text, font,color):
     textSurface = font.render(text,True,color)
     return textSurface, textSurface.get_rect()
 
+def howto():
+
+    howtogo=True
+
+    while howtogo:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+            elif event.type==pygame.KEYUP:
+                if event.key==pygame.K_x:
+                     howtogo=False
+                     
+        BigText = pygame.font.SysFont("comicsansms",60)
+        Text = pygame.font.SysFont("comicsansms",20)
+        textSurf1, textRect1 = text_objects("How To Play:",BigText,BLACK)
+        textRect1.center = ((disp_width/2),(disp_height*0.2))        
+        textSurf2, textRect2 = text_objects("1.Press X to Go Back or Quit the Game",Text,BLACK)
+        textRect2= (20,(disp_height*0.4))
+        textSurf3, textRect3 = text_objects("2.Press G to Go",Text,BLACK)
+        textRect3= (20,(disp_height*0.5))
+        textSurf4, textRect4 = text_objects("3. Use the arrow Keys to navigate the snake towards the Food",Text,BLACK)
+        textRect4= (20,(disp_height*0.6))
+        textSurf5, textRect5 = text_objects("4.Press P to Pause",Text,BLACK)
+        textRect5= (20,(disp_height*0.7))
+        textSurf6, textRect6 = text_objects("5.You will Lose the Game when the snake collides with itself",Text,BLACK)
+        textRect6= (20,(disp_height*0.8))
+        textSurf7, textRect7 = text_objects("6.The Snake can't change its direction by 180° as it collides with itself",Text,BLACK)
+        textRect7= (20,(disp_height*0.9))
+        disp.blit(background,[0,0])
+        disp.blit(textSurf1, textRect1)
+        disp.blit(textSurf2, textRect2)
+        disp.blit(textSurf3, textRect3)
+        disp.blit(textSurf4, textRect4)
+        disp.blit(textSurf5, textRect5)
+        disp.blit(textSurf6, textRect6)
+        disp.blit(textSurf7, textRect7)
+        pygame.display.update()
 
 def scorecard(score):
 
@@ -135,6 +173,8 @@ def gameintro():
         button("GO!",150,350,100,50,green,bright_green,gamestart)
         
         button("Quit!",450,350,100,50,red,bright_red,quitgame)
+
+        button("How To Play?",disp_width*0.4,disp_height*0.8,150,50,red,bright_red,howto) 
         
         pygame.display.update()
 
